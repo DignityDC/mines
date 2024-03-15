@@ -13,6 +13,10 @@ local function IsVehicleNearMine(vehicle, mineHashes)
             explodedMines[mine] = true 
             local mineCoords = GetEntityCoords(mine)
             TriggerServerEvent('detectMine', mineCoords, NetworkGetNetworkIdFromEntity(vehicle))
+            local vehicleModel = GetEntityModel(vehicle)
+            local vehicleName = GetDisplayNameFromVehicleModel(vehicleModel)
+            local playerServerId = GetPlayerServerId(NetworkGetEntityOwner(vehicle))
+            TriggerServerEvent('logMineExplosion', playerServerId, vehicleName, mineHash, mineCoords)
             return true
         end
     end
