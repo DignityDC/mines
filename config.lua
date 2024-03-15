@@ -14,3 +14,5 @@ Config.Mines = {
     { name = 'h4_prop_h4_mine_03a', hash = 3455403134 },
     { name = 'xm_prop_x17_mine_03a', hash = 1810637741 },
 }
+
+Config.DetectionRadius = 10.0 
